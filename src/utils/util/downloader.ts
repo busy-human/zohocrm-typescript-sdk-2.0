@@ -48,7 +48,7 @@ class Downloader extends Converter {
             }
         }
         else {
-            let ClassName = (await import("../../" + pack)).MasterModel;
+            let ClassName = (await import("../../" + pack + ".js")).MasterModel;
 
             instance = new ClassName();
 

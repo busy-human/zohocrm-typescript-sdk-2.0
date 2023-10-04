@@ -531,7 +531,7 @@ export class JSONConverter extends Converter {
 			instance = await this.findMatch(classes, responseJson).catch(err => { throw err; });// findmatch returns instance(calls getresponse() recursively)
 		}
 		else {
-			let ClassName = (await import("../../".concat(packageName))).MasterModel;
+			let ClassName = (await import("../../".concat(packageName, ".js"))).MasterModel;
 
 			instance = new ClassName();
 
@@ -569,7 +569,7 @@ export class JSONConverter extends Converter {
 	}
 
 	private async isRecordResponse(responseJson: any, classDetail: { [key: string]: any }, pack: string): Promise<any> {
-		let className = (await import("../../" + pack)).MasterModel;
+		let className = (await import("../../" + pack + ".js")).MasterModel;
 
 		let recordInstance = new className();
 
@@ -585,7 +585,7 @@ export class JSONConverter extends Converter {
 			if (fullDetail != null) {// from JSONDetails
 				moduleDetail = fullDetail[Constants.MODULEDETAILS];
 
-				let moduleClassName = (await import("../../" + fullDetail[Constants.MODULEPACKAGENAME])).MasterModel;
+				let moduleClassName = (await import("../../" + fullDetail[Constants.MODULEPACKAGENAME] + ".js")).MasterModel;
 
 				recordInstance = new moduleClassName();
 			}

@@ -327,7 +327,7 @@ export class Constants {
 
     public static MODULE = "module";
 
-    public static CHOICE_PATH = "./choice";
+    public static CHOICE_PATH = "./choice.js";
 
     public static PACKAGE_NAMESPACE = "core/com/zoho/crm/api";
 

@@ -87,7 +87,7 @@ export abstract class Converter {
 
 				let index = 0;
 
-				let className = (await import("../../" + structureName)).MasterModel;
+				let className = (await import("../../" + structureName + ".js")).MasterModel;
 
 				for (let data of value) {
 					if (!(data instanceof className)) {
@@ -128,7 +128,7 @@ export abstract class Converter {
 		else if (value != null && type.toLowerCase() !== Constants.OBJECT_KEY) {
 			let expectedStructure = keyDetails[Constants.TYPE];
 
-			let className = (await import("../../" + expectedStructure)).MasterModel;
+			let className = (await import("../../" + expectedStructure + ".js")).MasterModel;
 
 			if (!(value instanceof className)) {
 				check = false;
