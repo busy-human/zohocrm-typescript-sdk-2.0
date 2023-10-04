@@ -35,7 +35,7 @@
     "repository": "https://github.com/busy-human/zohocrm-typescript-sdk-2.0.git",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "build": "tsc"
+      "build": "tsc && cp -r ./src/config ./dist/config"
     },
     "exports": {
         "./*": "./dist/*"
