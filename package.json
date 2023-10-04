@@ -40,5 +40,5 @@
     "exports": {
         "./*": "./dist/*"
     },
-    "files": ["./dist/*"]
+    "files": ["dist/"]
 }
