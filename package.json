@@ -1,8 +1,9 @@
 {
     "name": "@busy-human/zohocrm-typescript-sdk-2.0",
-    "version": "7.1.3",
+    "version": "7.1.4",
     "description": "TypeScript SDK for Zoho CRM",
     "main": "routes/initializer.js",
+    "type": "module",
     "keywords": [
         "Node",
         "Zoho",
@@ -14,10 +15,10 @@
     ],
     "dependencies": {
         "form-data": "^3.0.0",
-        "got": "^11.8.1",
+        "got": "^13.0.0",
         "mysql": "^2.18.1",
         "winston": "^3.2.1",
-        "date": "^1.0.2",
+        "date": "^2.0.3",
         "string-format": "^2.0.0",
         "utils": "^0.3.1",
         "tunnel": "0.0.6"
