@@ -1,0 +1,9 @@
+import "./in_data_center.js";
+import "./jp_data_center.js";
+import "./eu_data_center.js";
+import "./environment.js";
+import "./data_center.js";
+import "./us_data_center.js";
+import "./index.js";
+import "./au_data_center.js";
+import "./cn_data_center.js";
