@@ -1,6 +1,6 @@
 {
     "name": "@busy-human/zohocrm-typescript-sdk-2.0",
-    "version": "7.1.5",
+    "version": "7.1.6",
     "description": "TypeScript SDK for Zoho CRM",
     "main": "routes/initializer.js",
     "type": "module",
@@ -36,7 +36,8 @@
     "repository": "https://github.com/busy-human/zohocrm-typescript-sdk-2.0.git",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "build": "tsc && cp -r ./src/config ./dist/config"
+      "build": "tsc && cp -r ./src/config ./dist/config",
+      "prepublish": "yarn build"
     },
     "exports": {
         "./*": "./dist/*"
