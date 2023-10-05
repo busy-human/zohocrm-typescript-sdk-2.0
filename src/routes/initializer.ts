@@ -15,9 +15,7 @@ All rights reserved.
    limitations under the License.
 */
 
-import * as Logger from 'winston';
-import * as fs from 'fs';
-import * as path from "path";
+import Logger from 'winston';
 import { UserSignature } from './user_signature.js';
 import { Environment } from '../routes/dc/environment.js';
 import { Token } from '../models/authenticator/token.js';
@@ -29,6 +27,12 @@ import { Constants } from '../utils/util/constants.js';
 import { SDKLogger } from './logger/sdk_logger.js';
 import { SDKException } from '../core/com/zoho/crm/api/exception/sdk_exception.js';
 import { OAuthToken } from '../models/authenticator/oauth_token.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { readFileSync } from 'fs';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * The class to initialize Zoho CRM SDK.
@@ -118,9 +122,7 @@ export class Initializer {
 	 * @returns A JSON representing the class information details.
 	 */
 	public static getJSON(filePath: string): any {
-		let fs = require('fs');
-
-		let fileData = fs.readFileSync(filePath);
+		let fileData = readFileSync(filePath).toString();
 
 		return JSON.parse(fileData);
 	}

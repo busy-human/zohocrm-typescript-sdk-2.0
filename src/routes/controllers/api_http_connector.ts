@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import { Constants } from '../../utils/util/constants.js';
 import got from 'got';
-import * as Logger from 'winston';
+import Logger from 'winston';
 import { Converter } from '../../utils/util/converter.js';
 import { Initializer } from '../initializer.js';
 import { RequestProxy } from '../request_proxy.js';

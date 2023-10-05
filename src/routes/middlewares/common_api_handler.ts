@@ -14,7 +14,7 @@ import { Param } from "../param.js";
 
 import { ParameterMap } from "../parameter_map.js";
 
-import * as Logger from "winston";
+import Logger from "winston";
 
 import * as path from "path";
 

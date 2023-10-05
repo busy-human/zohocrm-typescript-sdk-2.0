@@ -2,12 +2,15 @@ import { Header } from "../../routes/header.js";
 
 import { Param } from "../../routes/param.js";
 
-import * as path from "path";
-
 import { Constants } from "./constants.js";
 
 import { DataTypeConverter } from "./datatype_converter.js";
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 /**
  * This class validates the Header and Parameter values with the type accepted by the CRM APIs.
  */

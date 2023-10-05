@@ -4,6 +4,8 @@ import {SDKException} from "../exception/sdk_exception.js";
 import {APIResponse} from "../../../../../../routes/controllers/api_response.js";
 import {CommonAPIHandler} from "../../../../../../routes/middlewares/common_api_handler.js";
 import { Constants } from "../../../../../../utils/util/constants.js";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
 class LayoutsOperations{
 

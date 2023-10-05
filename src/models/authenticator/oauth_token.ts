@@ -4,7 +4,7 @@ import FormData = require("form-data");
 import { Constants } from '../../utils/util/constants.js';
 import { UserSignature } from '../../routes/user_signature.js';
 import { TokenStore } from './store/token_store.js';
-import * as Logger from 'winston';
+import Logger from 'winston';
 import { SDKException } from '../../core/com/zoho/crm/api/exception/sdk_exception.js';
 import got from 'got';
 import { APIHTTPConnector } from '../../routes/controllers/api_http_connector.js';

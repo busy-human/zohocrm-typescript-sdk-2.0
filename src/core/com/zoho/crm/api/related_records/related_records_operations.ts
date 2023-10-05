@@ -10,6 +10,8 @@ import {APIResponse} from "../../../../../../routes/controllers/api_response.js"
 import {CommonAPIHandler} from "../../../../../../routes/middlewares/common_api_handler.js";
 import {Utility} from "../../../../../../utils/util/utility.js";
 import { Constants } from "../../../../../../utils/util/constants.js";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
 class RelatedRecordsOperations{
 

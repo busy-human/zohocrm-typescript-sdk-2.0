@@ -1,6 +1,6 @@
 import { Logger } from './logger.js';
 
-import * as winston from 'winston';
+import winston from 'winston';
 
 /**
  * The class to initialize the SDK logger.
@@ -18,9 +18,7 @@ export class SDKLogger {
             ),
 
             transports: [
-                new winston.transports.File({
-                    filename: loggerInstance.getFilePath()
-                })
+                new winston.transports.Console()
             ]
         });
     }

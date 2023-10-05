@@ -28,9 +28,14 @@ import { FileStore } from "../models/authenticator/store/file_store.js";
 
 import { RequestProxy } from './request_proxy.js';
 
-import * as fs from 'fs';
+import fs from 'fs';
 
-import * as path from "path";
+import path from "path";
+
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export class InitializeBuilder {
     private _environment: Environment;
