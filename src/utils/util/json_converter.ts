@@ -531,7 +531,7 @@ export class JSONConverter extends Converter {
 			instance = await this.findMatch(classes, responseJson).catch(err => { throw err; });// findmatch returns instance(calls getresponse() recursively)
 		}
 		else {
-			let ClassName = (await import("../../".concat(packageName, ".js"))).MasterModel;
+			let ClassName = (await import("../../" + packageName + ".js")).MasterModel;
 
 			instance = new ClassName();
 
@@ -653,7 +653,7 @@ export class JSONConverter extends Converter {
 				memberValue = await this.getMapData(keyData, memberDetail).catch(err => { throw err; });
 			}
 			else if (type == Constants.CHOICE_NAMESPACE || (memberDetail.hasOwnProperty(Constants.STRUCTURE_NAME) && memberDetail[Constants.STRUCTURE_NAME] == Constants.CHOICE_NAMESPACE)) {
-				let Choice = (await import(Constants.CHOICE_PATH)).MasterModel;
+				let Choice = (await import("./choice.js")).MasterModel; // Previously Constants.CHOICE_PATH
 
 				memberValue = new Choice(keyData);
 			}
@@ -718,7 +718,7 @@ export class JSONConverter extends Converter {
 
 				if (pack == Constants.CHOICE_NAMESPACE) {
 					for (let response of responses) {
-						let choiceClass = (await import(Constants.CHOICE_PATH)).MasterModel;
+						let choiceClass = (await import("./choice.js")).MasterModel; // Previously Constants.CHOICE_PATH
 
 						let choiceInstance = new choiceClass(response);
 
