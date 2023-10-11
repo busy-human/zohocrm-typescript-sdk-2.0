@@ -10,7 +10,7 @@ import { Converter } from "./converter.js";
 
 import { SDKException } from "../../core/com/zoho/crm/api/exception/sdk_exception.js";
 
-import * as Logger from "winston";
+import Logger from "winston";
 
 import { Utility } from "./utility.js";
 

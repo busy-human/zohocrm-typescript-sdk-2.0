@@ -18,7 +18,7 @@ import * as fs from 'fs';
 
 import { Converter } from "./converter.js";
 
-import * as Logger from "winston";
+import Logger from "winston";
 
 /**
  * This class handles module field details.
