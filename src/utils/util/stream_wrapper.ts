@@ -6,13 +6,15 @@ import * as path from "path";
 
 import { Constants } from "./constants.js";
 
+import { Readable } from "stream";
+
 /**
  * This class handles the file stream and name.
  */
 class StreamWrapper {
     private name: string | undefined;
 
-    private stream: fs.ReadStream | undefined;
+    private stream: Readable | undefined;
 
     private file: string | undefined;
 
@@ -22,7 +24,7 @@ class StreamWrapper {
      * @param {object} stream - A InputStream containing the file stream.
      * @param {string} filePath - A String containing the absolute file path.
     */
-    constructor(name?: string, stream?: fs.ReadStream, filePath?: string | null) {
+    constructor(name?: string, stream?: Readable, filePath?: string | null) {
         if (filePath === undefined || filePath === null) {
             this.name = name;
 
@@ -53,7 +55,7 @@ class StreamWrapper {
      * This is a getter method to get the file input stream.
      * @returns A ReadStream representing the file input stream.
     */
-    public getStream(): fs.ReadStream | undefined {
+    public getStream(): Readable | undefined {
         return this.stream;
     }
 }
