@@ -12,7 +12,9 @@ import { Constants } from "./constants.js";
 
 import { SDKException } from "../../core/com/zoho/crm/api/exception/sdk_exception.js";
 
-import FormData = require("form-data");
+import { blob } from 'node:stream/consumers';
+
+import { FormData } from 'formdata-node';
 
 /**
  * This class is to process the upload file and stream.
@@ -44,7 +46,8 @@ class FormDataConverter extends Converter {
             if (Array.isArray(value)) {
                 for (let fileObject of value) {
                     if (fileObject instanceof StreamWrapper) {
-                        formData.append(key, fileObject.getStream());
+                        const fileData = await blob(fileObject.getStream());
+                        formData.append(key, fileData, fileObject.getName());
                     }
                     else {
                         formData.append(key, fileObject);
@@ -52,7 +55,8 @@ class FormDataConverter extends Converter {
                 }
             }
             else if (value instanceof StreamWrapper) {
-                formData.append(key, value.getStream());
+                const fileData = await blob(value.getStream());
+                formData.append(key, fileData, value.getName());
             }
             else {
                 formData.append(key, value);

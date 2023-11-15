@@ -1,6 +1,5 @@
 import { Initializer } from '../../routes/initializer.js';
 import { Token } from './token.js';
-import FormData = require("form-data");
 import { Constants } from '../../utils/util/constants.js';
 import { UserSignature } from '../../routes/user_signature.js';
 import { TokenStore } from './store/token_store.js';
